@@ -22,10 +22,12 @@
                     <h2 class="mb-2 font-weight-light text-black h4"><?= $arItem["NAME"]; ?></h2>
                     <span class="d-block mb-3 text-white-opacity-05"><?= $arItem["PREVIEW_TEXT"]; ?></span>
                     <p class="mb-5"><?= $arItem["DETAIL_TEXT"]; ?></p>
-                    <p>
-                        <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-                        <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-                        <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
+                    <p><a href="#" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_FACEBOOK_VALUE"];?>"></span></a>
+                        <a href="#" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_TWITTER_VALUE"];?>"></span></a>
+                        <a href="#" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_INSTAGRAM_VALUE"];?>"></span></a>
+
+
+                        
                     </p>
                 </div>
             </div>
@@ -33,3 +35,6 @@
     <? endforeach; ?>
     </div>
 </div>
+
+
+       
