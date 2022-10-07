@@ -7,12 +7,12 @@
   <title><? $APPLICATION->ShowTitle(); ?></title>
   <? $APPLICATION->ShowHead(); ?>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
+  
 
   <?
 
   use Bitrix\Main\Page\Asset;
-
+  Asset::getInstance()->addString('<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">');
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/fonts/icomoon/style.css");
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/fonts/flaticon/font/flaticon.css");
   Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap.css");
