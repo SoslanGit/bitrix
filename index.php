@@ -21,6 +21,7 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "my_slider",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -28,7 +29,7 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array("NAME","PREVIEW_PICTURE"),
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"PRICE",3=>"",),
 		"FILTER_NAME" => "newsFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "6",
@@ -47,7 +48,7 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array(0=>"LOCATION",1=>"PRICE",2=>"",),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
@@ -167,33 +168,24 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 			</div>
 		</div>
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	"my_blog", 
-	array(
+	"bitrix:news.line",
+	"my_blog",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "300",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "my_blog",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_TEXT",
-			2 => "PREVIEW_PICTURE",
-			3 => "DATE_CREATE",
-			4 => "",
-		),
-		"IBLOCKS" => array(
-			0 => "5",
-		),
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_TEXT",2=>"PREVIEW_PICTURE",3=>"DATE_CREATE",4=>"",),
+		"IBLOCKS" => array(0=>"5",),
 		"IBLOCK_TYPE" => "news",
 		"NEWS_COUNT" => "3",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC"
-	),
-	false
+	)
 );?>
 	</div>
 </div>
