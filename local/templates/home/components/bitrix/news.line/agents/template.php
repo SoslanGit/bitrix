@@ -22,9 +22,9 @@
                     <h2 class="mb-2 font-weight-light text-black h4"><?= $arItem["NAME"]; ?></h2>
                     <span class="d-block mb-3 text-white-opacity-05"><?= $arItem["PREVIEW_TEXT"]; ?></span>
                     <p class="mb-5"><?= $arItem["DETAIL_TEXT"]; ?></p>
-                    <p><a href="<?= $arItem["PROPERTY_FACEBOOKLINK_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_FACEBOOK_VALUE"];?>"></span></a>
-                        <a href="<?= $arItem["PROPERTY_TWITTERLINK_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_TWITTER_VALUE"];?>"></span></a>
-                        <a href="<?= $arItem["PROPERTY_INSTAGRAMLINK_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_INSTAGRAM_VALUE"];?>"></span></a>
+                    <p><a href="<?= $arItem["PROPERTY_LINK1_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_ICON1_VALUE"];?>"></span></a>
+                        <a href="<?= $arItem["PROPERTY_LINK2_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_ICON2_VALUE"];?>"></span></a>
+                        <a href="<?= $arItem["PROPERTY_LINK3_VALUE"];?>" class="text-black p-2"><span class="icon-<?= $arItem["PROPERTY_ICON3_VALUE"];?>"></span></a>
 
 
                         
