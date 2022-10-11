@@ -47,8 +47,10 @@
                             </div>
                             <div class="col">
                             <?if($arItem["PROPERTY_GARAGES_VALUE"] == 'да'):?>
-
                                 <span><?= GetMessage("GARAGES"); ?></span><strong><?= $arItem["PROPERTY_GARAGES_VALUE"]; ?></strong>
+                            <?else:?>
+                                <span><?= GetMessage("GARAGES"); ?></span><strong>нет</strong>
+
                                 <?endif;?>
 
                             </div>

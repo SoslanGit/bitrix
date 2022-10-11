@@ -135,41 +135,33 @@ $this->setFrameMode(true);
                             </div>
                             <div class="prop-more-info">
                                 <div class="inner d-flex">
-                                <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["TOTAL_AREA"])) : ?>
-
                                     <div class="col">
+                                        <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["TOTAL_AREA"])) : ?>
                                         <span><?= GetMessage("LOT_AREA"); ?>:</span>
                                         <strong><?= $arItem["DISPLAY_PROPERTIES"]["TOTAL_AREA"]["VALUE"]; ?>m<sup>2</sup></strong>
+                                        <? endif ?>
                                     </div>
-                                    <? endif ?>
-
-                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["BEDS"])) : ?>
-
                                     <div class="col">
+                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["BEDS"])) : ?>
                                         <span><?= GetMessage("BEDROOMS"); ?>:</span>
                                         <strong><?= $arItem["DISPLAY_PROPERTIES"]["BEDS"]["VALUE"]; ?></strong>
+                                        <? endif ?>
 
                                     </div>
-                                    <? endif ?>
-
-                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"])) : ?>
-
                                     <div class="col">
+                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"])) : ?>
                                         <span><?= GetMessage("BATHROOMS"); ?>:</span>
                                         <strong><?= $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"]; ?></strong>
+                                        <? endif ?>
 
                                     </div>
-
-                                    <? endif ?>
-                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["GARAGES"])) : ?>
-
                                     <div class="col">
+                                    <? if (!empty( $arItem["DISPLAY_PROPERTIES"]["GARAGES"])) : ?>
                                         <span><?= GetMessage("GARAGES"); ?>:</span>
                                         <strong><?= $arItem["DISPLAY_PROPERTIES"]["GARAGES"]["VALUE"]; ?></strong>
+                                        <? endif ?>
 
                                     </div>
-                                    <? endif ?>
-
                                 </div>
                             </div>
                         </div>

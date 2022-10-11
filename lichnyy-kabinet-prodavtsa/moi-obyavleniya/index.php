@@ -43,7 +43,7 @@ $APPLICATION->SetTitle("Title");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array("",""),
-		"LIST_PROPERTY_CODE" => array("",""),
+		"LIST_PROPERTY_CODE" => array("LOCATION","PRICE","LINKS","DEAL","TOTAL_AREA","GARAGES","BEDS","BATHROOMS",""),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
