@@ -19,7 +19,7 @@ for ($index = 0; $index < $itemSize; $index++)
     {
         $strReturn .= '
             
-            <a href="' . $arResult[$index]["LINK"] . '"<strong>' . $title . '</strong></a>
+            <a href="' . $arResult[$index]["LINK"] . '"' . $title . '</a>
             <span class="mx-2 text-white">&bullet;</span>
 
         ';
