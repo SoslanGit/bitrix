@@ -4,4 +4,6 @@ $MESS["AREA"] = "Площадь";
 $MESS["BEDS"] = "Комнаты";
 $MESS["BATHROOMS"] = "Ванны";
 $MESS["GARAGES"] = "Гаражи";
+$MESS["TITLE_PROPERTY"] = 'Новые свойства для вас'
+
 ?>

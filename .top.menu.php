@@ -16,12 +16,11 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Объявления", 
-		"obyavleniya/index.php", 
+		"obyavleniya/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
-	
 	Array(
 		"Личный кабинет продавца", 
 		"lichnyy-kabinet-prodavtsa/", 

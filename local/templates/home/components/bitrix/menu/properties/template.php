@@ -14,29 +14,20 @@
                     <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
                 <? endif ?>
                 <? if ($arItem["IS_PARENT"]) : ?>
-                    <? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
+                    <? if ($arItem["DEPTH_LEVEL"] >= 1) : ?>
                         <li class="has-children <? if ($arItem['SELECTED']) : ?> active <? endif ?>">
                             <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             <ul class="dropdown">
-                    <? elseif ($arItem['DEPTH_LEVEL'] == 2) : ?>
-                        <li class="has-children <? if ($arItem['SELECTED']) : ?> active <? endif ?>">
-                            <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-                            <ul class="dropdown">
-                    <? else : ?>
-                        <li <? if ($arItem["SELECTED"]) : ?> class="active" <? endif ?>>
-                            <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-                            <ul>
+                  
+                 
                     <? endif ?>
                 <? else : ?>
                     <? if ($arItem["PERMISSION"]  > "D"): ?>
-                        <? if ($arItem["DEPTH_LEVEL"] == 1) : ?>
+                        <? if ($arItem["DEPTH_LEVEL"] >=  1) : ?>
                             <li <? if ($arItem["SELECTED"]) : ?> class="active" <? endif ?>>
                                 <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
                             </li>
-                        <? else : ?>
-                            <li <? if ($arItem["SELECTED"]) : ?> class="active" <? endif ?>>
-                                <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-                            </li>
+                     
                         <? endif ?>
                     <? endif ?>
                 <? endif ?>

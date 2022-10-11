@@ -8,7 +8,7 @@ $GLOBALS['obFavorite'] = array('ACTIVE' => 'Y', 'PROPERTY_DEAL_VALUE' => 'Yes');
 	"favorite",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -31,7 +31,7 @@ $GLOBALS['obFavorite'] = array('ACTIVE' => 'Y', 'PROPERTY_DEAL_VALUE' => 'Yes');
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "6",
 		"IBLOCK_TYPE" => "Obyavleniya",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"MESSAGE_404" => "",
 		"NEWS_COUNT" => "20",

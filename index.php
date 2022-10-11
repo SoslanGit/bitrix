@@ -18,7 +18,7 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 		"AJAX_OPTION_STYLE" => "Y",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
+		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
 		"COMPONENT_TEMPLATE" => "my_slider",
@@ -113,11 +113,12 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
+		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "favor_lenta",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("NAME","PREVIEW_PICTURE","PROPERTY_PRICE","PROPERTY_LOCATION","PROPERTY_TOTAL_AREA","PROPERTY_BEDS","PROPERTY_BATHROOMS","PROPERTY_GARAGES",),
-		"IBLOCKS" => array("6"),
+		"FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"PROPERTY_PRICE",3=>"PROPERTY_LOCATION",4=>"PROPERTY_TOTAL_AREA",5=>"PROPERTY_BEDS",6=>"PROPERTY_BATHROOMS",7=>"PROPERTY_GARAGES",8=>"",),
+		"IBLOCKS" => array(0=>"6",),
 		"IBLOCK_TYPE" => "Obyavleniya",
 		"NEWS_COUNT" => "9",
 		"SORT_BY1" => "ACTIVE_FROM",
@@ -130,23 +131,17 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 </div>
 <div class="site-section">
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-7 text-center mb-5">
-				<div class="site-section-title">
-					<h2>Наши услуги</h2>
-				</div>
-			</div>
-		</div>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line",
 	"services",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "300",
+		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "services",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array("NAME","PROPERTY_FLATICON","PROPERTY_ICONLINK",""),
+		"FIELD_CODE" => array(0=>"NAME",1=>"PROPERTY_FLATICON",2=>"PROPERTY_ICONLINK",3=>"",),
 		"IBLOCKS" => array(),
 		"IBLOCK_TYPE" => "Services",
 		"NEWS_COUNT" => "6",
@@ -160,20 +155,13 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 </div>
 <div class="site-section bg-light">
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-7 text-center mb-5">
-				<div class="site-section-title">
-					<h2>Наш блог</h2>
-				</div>
-			</div>
-		</div>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.line",
 	"my_blog",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "300",
+		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "my_blog",
 		"DETAIL_URL" => "",
@@ -197,13 +185,13 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "300",
+		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "agents",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(0=>"ID",1=>"CODE",2=>"NAME",3=>"PREVIEW_TEXT",4=>"PREVIEW_PICTURE",5=>"DETAIL_TEXT","PROPERTY_LINK1","PROPERTY_LINK2","PROPERTY_LINK3","PROPERTY_ICON1","PROPERTY_ICON2","PROPERTY_ICON3"),
-		"IBLOCKS" => array(0=>"8",),
-		"IBLOCK_TYPE" => "agents",
+		"FIELD_CODE" => array(0=>"ID",1=>"CODE",2=>"NAME",3=>"PREVIEW_TEXT",4=>"PREVIEW_PICTURE",5=>"DETAIL_TEXT",6=>"PROPERTY_LINK1",7=>"PROPERTY_LINK2",8=>"PROPERTY_LINK3",9=>"PROPERTY_ICON1",10=>"PROPERTY_ICON2",11=>"PROPERTY_ICON3",12=>"",),
+		"IBLOCKS" => array(),
+		"IBLOCK_TYPE" => "Agents",
 		"NEWS_COUNT" => "20",
 		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "",
@@ -213,16 +201,6 @@ $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
 );?>
 	</div>
 </div>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	".default",
-	Array(
-		"AREA_FILE_SHOW" => "page",
-		"AREA_FILE_SUFFIX" => "inc",
-		"COMPONENT_TEMPLATE" => ".default",
-		"EDIT_TEMPLATE" => "standard.php"
-	)
-);?>
 <p>
 </p>
 <p>

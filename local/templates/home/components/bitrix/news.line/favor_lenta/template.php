@@ -28,16 +28,29 @@
                     <div class="prop-more-info">
                         <div class="inner d-flex">
                             <div class="col">
+                            <?if(!empty($arItem["PROPERTY_TOTAL_AREA_VALUE"])):?>
                                 <span><?= GetMessage("AREA"); ?></span><strong><?= $arItem["PROPERTY_TOTAL_AREA_VALUE"]; ?></strong>
+                            <?endif;?>
+
                             </div>
                             <div class="col">
+                            <?if(!empty($arItem["PROPERTY_BEDS_VALUE"])):?>
                                 <span><?= GetMessage("BEDS"); ?></span><strong><?= $arItem["PROPERTY_BEDS_VALUE"]; ?></strong>
+                            <?endif;?>
+
                             </div>
                             <div class="col">
+                            <?if(!empty($arItem["PROPERTY_BATHROOMS_VALUE"])):?>
                                 <span><?= GetMessage("BATHROOMS"); ?></span><strong><?= $arItem["PROPERTY_BATHROOMS_VALUE"]; ?></strong>
+                             <?endif;?>
+
                             </div>
                             <div class="col">
+                            <?if($arItem["PROPERTY_GARAGES_VALUE"] == 'да'):?>
+
                                 <span><?= GetMessage("GARAGES"); ?></span><strong><?= $arItem["PROPERTY_GARAGES_VALUE"]; ?></strong>
+                                <?endif;?>
+
                             </div>
                         </div>
                     </div>
