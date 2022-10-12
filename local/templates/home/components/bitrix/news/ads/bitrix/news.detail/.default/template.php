@@ -28,6 +28,7 @@ $this->setFrameMode(true);
     <div class="container">
         <div class="row">
             <div class="col-lg-8" style="margin-top: -150px;">
+            <? if(!empty($arResult["DISPLAY_PROPERTIES"]["IMAGES"])) : ?>
                 <div class="mb-5">
                     <div class="slide-one-item home-slider owl-carousel">
                         <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["ID"]) : ?>
@@ -50,11 +51,14 @@ $this->setFrameMode(true);
                         <? endif; ?>
                     </div>
                 </div>
+                <? endif ?>
                 <div class="bg-white">
                     <div class="row mb-5">
+                    <? if(!empty($arResult["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"])): ?>
                         <div class="col-md-6">
                             <strong class="text-success h1 mb-3">$<?= number_format($arResult["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"]); ?></strong>
                         </div>
+                        <? endif ?>
                         <div class="col-md-6">
                             <ul class="property-specs-wrap mb-3 mb-lg-0  float-lg-right">
                                 <li>
