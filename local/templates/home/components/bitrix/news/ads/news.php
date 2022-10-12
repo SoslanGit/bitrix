@@ -55,6 +55,17 @@ $this->setFrameMode(true);
 <? $GLOBALS["arFilter"] = Array(
     "CREATED_BY" => $USER->GetID(),
 ); ?>
+
+
+<? if ($APPLICATION->GetTitle() == 'Объявления'): ?>
+	<? $MY_FILTER = $arParams["FILTER_NAME"]; ?>
+
+          
+    <? elseif($APPLICATION->GetTitle() == 'Мои объявления'): ?>
+		<? $MY_FILTER = 'arFilter'; ?>
+
+        <h2><?= GetMessage("TITLE_ADS"); ?></h2>
+    <?endif?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"",
@@ -102,7 +113,7 @@ $this->setFrameMode(true);
 		"ACTIVE_DATE_FORMAT" => $arParams["LIST_ACTIVE_DATE_FORMAT"],
 		"USE_PERMISSIONS" => $arParams["USE_PERMISSIONS"],
 		"GROUP_PERMISSIONS" => $arParams["GROUP_PERMISSIONS"],
-		"FILTER_NAME" => "arFilter",
+		"FILTER_NAME" => $MY_FILTER,
 
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
