@@ -12,6 +12,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
 ?>
 <div class="pt-5">
     <div class="container">
@@ -109,7 +110,12 @@ $this->setFrameMode(true);
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2><?= GetMessage("TITLE_PROPERTY"); ?></h2>
+                    <? if ($APPLICATION->GetTitle() == 'Объявления'): ?>
+                        <h2><?= GetMessage("TITLE_PROPERTY"); ?></h2>
+                    <? elseif($APPLICATION->GetTitle() == 'Мои объявления'): ?>
+                        <h2><?= GetMessage("TITLE_ADS"); ?></h2>
+                    <?endif?>
+
                 </div>
             </div>
         </div>
@@ -128,29 +134,43 @@ $this->setFrameMode(true);
                             <img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"]; ?>" alt="<?= $arItem["NAME"]; ?>" class="img-fluid">
                         </figure>
                         <div class="prop-text">
+                        <? if (!empty ( $arItem["DISPLAY_PROPERTIES"]["PRICE"])):?>
                             <div class="inner">
                                 <span class="price rounded">$<?= number_format($arItem["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"]); ?></span>
                                 <h3 class="title"><?= $arItem["NAME"]; ?></h3>
                                 <p class="location"><?= $arItem["DISPLAY_PROPERTIES"]["LOCATION"]["VALUE"]; ?></p>
                             </div>
+                            <? endif ?>
+
                             <div class="prop-more-info">
                                 <div class="inner d-flex">
+                                    <? if (!empty ( $arItem["DISPLAY_PROPERTIES"]["TOTAL_AREA"])):?>
                                     <div class="col">
                                         <span><?= GetMessage("LOT_AREA"); ?>:</span>
                                         <strong><?= $arItem["DISPLAY_PROPERTIES"]["TOTAL_AREA"]["VALUE"]; ?>m<sup>2</sup></strong>
                                     </div>
+                                    <? endif ?>
+                                    <? if (!empty ($arItem["DISPLAY_PROPERTIES"]["BEDS"])):?>
                                     <div class="col">
                                         <span><?= GetMessage("BEDROOMS"); ?>:</span>
-                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["NUM_BEDS"]["VALUE"]; ?></strong>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["BEDS"]["VALUE"]; ?></strong>
                                     </div>
+                                    <? endif ?>
+                                    <? if (!empty ($arItem["DISPLAY_PROPERTIES"]["BATHROOMS"])):?>
+
                                     <div class="col">
                                         <span><?= GetMessage("BATHROOMS"); ?>:</span>
-                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["NUM_BATHROOMS"]["VALUE"]; ?></strong>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"]; ?></strong>
                                     </div>
+                                    <? endif ?>
+                                    
+                                    <? if (!empty ($arItem["DISPLAY_PROPERTIES"]["GARAGES"])):?>
                                     <div class="col">
                                         <span><?= GetMessage("GARAGES"); ?>:</span>
-                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["NUM_GARAGES"]["VALUE"]; ?></strong>
+                                        <strong><?= $arItem["DISPLAY_PROPERTIES"]["GARAGES"]["VALUE"]; ?></strong>
                                     </div>
+                                    <? endif ?>
+
                                 </div>
                             </div>
                         </div>

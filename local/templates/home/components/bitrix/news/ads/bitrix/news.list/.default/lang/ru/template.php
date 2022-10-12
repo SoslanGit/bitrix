@@ -14,3 +14,4 @@ $MESS["BATHROOMS"] = "Ванные";
 $MESS["GARAGES"] = "Гаражи";
 $MESS["SEARCH"] = "Искать";
 $MESS["TITLE_PROPERTY"] = "Новая недвижимость для Вас";
+$MESS["TITLE_ADS"] = "МОИ ОБЬЯВЛЕНИЯ";

@@ -4,6 +4,7 @@ $APPLICATION->SetTitle("Мебельная компания");
 
 $GLOBALS['newsFilter'] = array('ACTIVE' => 'Y', 'PROPERTY_DEAL_VALUE' => 'Yes');
 $GLOBALS['newsLenta'] = array('ACTIVE' => 'Y', '!PROPERTY_DEAL_VALUE' => false);
+global $APPLICATION;
 
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",

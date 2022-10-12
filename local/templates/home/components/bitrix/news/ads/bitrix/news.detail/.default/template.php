@@ -61,26 +61,35 @@ $this->setFrameMode(true);
                                     <span class="property-specs"><?= GetMessage("UPDATE_DATE"); ?></span>
                                     <span class="property-specs-number"><?= date("d.m.y", strtotime($arResult["TIMESTAMP_X"])); ?></span>
                                 </li>
-                                <li>
-                                    <span class="property-specs"><?= GetMessage("FLOORS"); ?></span>
-                                    <span class="property-specs-number"><?= $arResult["DISPLAY_PROPERTIES"]["NUM_FLOORS"]["VALUE"]; ?></span>
-                                </li>
-                                <li>
-                                    <span class="property-specs"><?= GetMessage("SQ_FT"); ?></span>
-                                    <span class="property-specs-number"><?= $arResult["DISPLAY_PROPERTIES"]["SQ_FT"]["VALUE"]; ?></span>
-                                </li>
+                                <? if (!empty($arResult["DISPLAY_PROPERTIES"]["BEDS"])) : ?>
+                                    <li>
+                                        <span class="property-specs"><?= GetMessage("FLOORS"); ?></span>
+                                        <span class="property-specs-number"><?= $arResult["DISPLAY_PROPERTIES"]["BEDS"]["VALUE"]; ?></span>
+                                    </li>
+                                <? endif ?>
+                                <? if(!empty($arResult["DISPLAY_PROPERTIES"]["TOTAL_AREA"])) :?>
+                                    <li>
+                                        <span class="property-specs"><?= GetMessage("SQ_FT"); ?></span>
+                                        <span class="property-specs-number"><?= $arResult["DISPLAY_PROPERTIES"]["TOTAL_AREA"]["VALUE"]; ?></span>
+                                    </li>
+                                <? endif ?>
+
                             </ul>
                         </div>
                     </div>
                     <div class="row mb-5">
+                    <? if(empty($arResult["DISPLAY_PROPERTIES"]["BATHROOMS"])) :?>
+
                         <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text"><?= GetMessage("BATHS"); ?></span>
-                            <strong class="d-block"><?= $arResult["DISPLAY_PROPERTIES"]["NUM_BATHROOMS"]["VALUE"]; ?></strong>
+                            <strong class="d-block"><?= $arResult["DISPLAY_PROPERTIES"]["BATHROOMS"]["VALUE"]; ?></strong>
                         </div>
+                        <? endif ?>
+
                         <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text"><?= GetMessage("GARAGES"); ?></span>
                             <strong class="d-block">
-                                <? if ($arResult["DISPLAY_PROPERTIES"]["NUM_GARAGES"]["VALUE"]) : ?>
+                                <? if ($arResult["DISPLAY_PROPERTIES"]["GARAGES"]["VALUE"]) : ?>
                                     <?= GetMessage("YES"); ?>
                                 <? else : ?>
                                     <?= GetMessage("NO"); ?>
@@ -90,10 +99,12 @@ $this->setFrameMode(true);
                     </div>
                     <h2 class="h4 text-black"><?= GetMessage("MORE_INFO"); ?></h2>
                     <p><?= $arResult["DETAIL_TEXT"]; ?></p>
+                    <? if (!empty($arResult["DISPLAY_PROPERTIES"]["IMAGES"])) : ?>
                     <div class="row mt-5">
                         <div class="col-12">
                             <h2 class="h4 text-black mb-3"><?= GetMessage("PROPERTY_GALLERY"); ?></h2>
-                        </div>
+                        </div> 
+                      
                             <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["ID"]) : ?>
                                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                                     <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["SRC"]; ?>" class="image-popup gal-item">
@@ -116,10 +127,11 @@ $this->setFrameMode(true);
                                         </a>
                                     </div>
                                 <? endfor; ?>
-                            <? else : ?>
-                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_IMAGES"); ?></div>
-                            <? endif; ?>
+                                <? endif; ?>
+                           
                     </div>
+                    <? endif; ?>
+                    <? if (!empty($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"])) : ?>
                     <div class="mt-5">
                         <h2 class="h4 text-black mb-3"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></h2>
                         <? if ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["ID"]) : ?>
@@ -133,7 +145,11 @@ $this->setFrameMode(true);
                                 </div>
                             <? endfor; ?>
                         <? endif; ?>
+
                     </div>
+                    <? endif; ?>
+                    <? if (!empty($arResult["DISPLAY_PROPERTIES"]["LINKS"])) : ?>
+
                     <div class="mt-5">
                         <h2 class="h4 text-black mb-3"><?= GetMessage("LINKS"); ?></h2>
                         <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"]); $i++) : ?>
@@ -142,6 +158,8 @@ $this->setFrameMode(true);
                             </div>
                         <? endfor; ?>
                     </div>
+                    <? endif; ?>
+
                 </div>
             </div>
             <div class="col-lg-4 pl-md-5">
