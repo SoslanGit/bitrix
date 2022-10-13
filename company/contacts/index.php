@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
 ?><p>
-	Контакты
+	 Контакты
 </p>
 <p>
 	 <?$APPLICATION->IncludeComponent(
@@ -16,7 +16,7 @@ $APPLICATION->SetTitle("Контакты");
 );?><br>
 </p>
 <p>
-	<br>
+ <br>
 </p>
 <p>
 </p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

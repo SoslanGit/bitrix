@@ -18,6 +18,7 @@ $MESS["PHONE"] = "Телефон";
 $MESS["SEND_MESSAGE"] = "Отправить";
 $MESS["PARAGRAPH"] = "Заметка";
 $MESS["NO_IMAGES"] = "Изображений нет";
+$MESS["NO_LINKS"] = "Ссылок нет";
 $MESS["YES"] = "Да";
 $MESS["NO"] = "Нет";
 $MESS["ADDITIONAL_MATERIALS"] = "Дополнительные материалы";

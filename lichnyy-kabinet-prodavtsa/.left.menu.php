@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"мои объявления", 
-		"moi-obyavleniya/index.php", 
+		"moi-obyavleniya/", 
 		Array(), 
 		Array(), 
 		"" 

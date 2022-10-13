@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Обратная связь", 
-		"obratnaya-svyaz.php", 
+		"contacts/obratnaya-svyaz.php", 
 		Array("company/contacts/"), 
 		Array("FROM_IBLOCK"=>"1", "IS_PARENT"=>"0", "DEPTH_LEVEL"=>"2"), 
 		"" 

@@ -28,7 +28,6 @@ $this->setFrameMode(true);
     <div class="container">
         <div class="row">
             <div class="col-lg-8" style="margin-top: -150px;">
-            <? if(!empty($arResult["DISPLAY_PROPERTIES"]["IMAGES"])) : ?>
                 <div class="mb-5">
                     <div class="slide-one-item home-slider owl-carousel">
                         <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["ID"]) : ?>
@@ -48,10 +47,11 @@ $this->setFrameMode(true);
                                         class="img-fluid">
                                 </div>
                             <? endfor; ?>
+                                <? else : ?>
+                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_IMAGES"); ?></div>
                         <? endif; ?>
                     </div>
                 </div>
-                <? endif ?>
                 <div class="bg-white">
                     <div class="row mb-5">
                     <? if(!empty($arResult["DISPLAY_PROPERTIES"]["PRICE"]["VALUE"])): ?>
@@ -135,7 +135,6 @@ $this->setFrameMode(true);
                            
                     </div>
                     <? endif; ?>
-                    <? if (!empty($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"])) : ?>
                     <div class="mt-5">
                         <h2 class="h4 text-black mb-3"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></h2>
                         <? if ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["ID"]) : ?>
@@ -148,10 +147,11 @@ $this->setFrameMode(true);
                                     <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"][$i]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
                                 </div>
                             <? endfor; ?>
+                            <? else : ?>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_LINKS"); ?></div>
                         <? endif; ?>
 
                     </div>
-                    <? endif; ?>
                     <? if (!empty($arResult["DISPLAY_PROPERTIES"]["LINKS"])) : ?>
 
                     <div class="mt-5">
