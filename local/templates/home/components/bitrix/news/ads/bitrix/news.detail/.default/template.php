@@ -40,15 +40,15 @@ $this->setFrameMode(true);
                                     class="img-fluid"
                                 >
                             </div>
-                        <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"] > 1) : ?>
-                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"]); $i++) : ?>
+                        <? elseif (count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"]) > 1) : ?>
+                            <? foreach ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"] as $index => $value ) : ?>
                                 <div>
                                     <img
-                                        src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["SRC"]; ?>"
-                                        alt="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["ORIGINAL_NAME"]; ?>"
+                                        src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$index]["SRC"]; ?>"
+                                        alt="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$index]["ORIGINAL_NAME"]; ?>"
                                         class="img-fluid">
                                 </div>
-                            <? endfor; ?>
+                            <? endforeach; ?>
                                 <? else : ?>
                                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_IMAGES"); ?></div>
                         <? endif; ?>
@@ -84,7 +84,7 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                     <div class="row mb-5">
-                    <? if(empty($arResult["DISPLAY_PROPERTIES"]["BATHROOMS"])) :?>
+                    <? if(!empty($arResult["DISPLAY_PROPERTIES"]["BATHROOMS"])) :?>
 
                         <div class="col-md-6 col-lg-4 text-left border-bottom border-top py-3">
                             <span class="d-inline-block text-black mb-0 caption-text"><?= GetMessage("BATHS"); ?></span>
@@ -110,7 +110,6 @@ $this->setFrameMode(true);
                         <div class="col-12">
                             <h2 class="h4 text-black mb-3"><?= GetMessage("PROPERTY_GALLERY"); ?></h2>
                         </div> 
-                        <?php echo '<pre>'; print_r($arResult["DISPLAY_PROPERTIES"]); echo '</pre>'; ?>
                       
                             <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]['FILE_VALUE']['ID']) : ?>
                                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -122,21 +121,22 @@ $this->setFrameMode(true);
                                         >
                                     </a>
                                 </div>
-                            <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]['VALUE'] > 1) : ?>
-                                <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"]); $i++) : ?>
+                            <? elseif (count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]['VALUE']) > 1) : ?>
+                                <? foreach ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"] as $index => $value ) : ?>
                                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-                                        <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["SRC"]; ?>" class="image-popup gal-item">
+                                        <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$index]["SRC"]; ?>" class="image-popup gal-item">
                                             <img
-                                                src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["SRC"]; ?>"
-                                                alt="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["ORIGINAL_NAME"]; ?>"
+                                                src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$index]["SRC"]; ?>"
+                                                alt="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$index]["ORIGINAL_NAME"]; ?>"
                                                 class="img-fluid"
                                             >
                                         </a>
                                     </div>
-                                <? endfor; ?>
+
+                                <? endforeach; ?>
                                
                                 <? endif; ?>
-                           
+
                     </div>
                     <? endif; ?>
                     <div class="mt-5">
@@ -146,11 +146,11 @@ $this->setFrameMode(true);
                                 <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
                             </div>
                         <? elseif ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["VALUE"] > 1) : ?>
-                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["VALUE"]); $i++) : ?>
+                            <? foreach ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["VALUE"] as $index => $value) : ?>
                                 <div>
-                                    <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"][$i]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
+                                    <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"][$index]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
                                 </div>
-                            <? endfor; ?>
+                            <? endforeach; ?>
                             <? else : ?>
                                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_ADDITIONAL_MATERIALS"); ?></div>
                         <? endif; ?>
@@ -160,11 +160,11 @@ $this->setFrameMode(true);
 
                     <div class="mt-5">
                         <h2 class="h4 text-black mb-3"><?= GetMessage("LINKS"); ?></h2>
-                        <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"]); $i++) : ?>
+                        <? foreach ($arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"] as $index => $value) : ?>
                             <div>
-                                <a href="<?= $arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"][$i]; ?>"><?= GetMessage("LINKS"); ?></a>
+                                <a href="<?= $arResult["DISPLAY_PROPERTIES"]["LINKS"]["VALUE"][$index]; ?>"><?= GetMessage("LINKS"); ?></a>
                             </div>
-                        <? endfor; ?>
+                        <? endforeach; ?>
                     </div>
                     <? endif; ?>
 

@@ -133,24 +133,31 @@ global $APPLICATION;
 <div class="site-section">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"services",
-	Array(
+	"bitrix:news.line", 
+	"services", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "1814400",
 		"CACHE_TYPE" => "A",
 		"COMPONENT_TEMPLATE" => "services",
 		"DETAIL_URL" => "",
-		"FIELD_CODE" => array(0=>"NAME",1=>"PROPERTY_FLATICON",2=>"PROPERTY_ICONLINK",3=>"",),
-		"IBLOCKS" => array(),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PROPERTY_FLATICON",
+			2 => "PROPERTY_ICONLINK",
+			3 => "",
+		),
+		"IBLOCKS" => array(
+		),
 		"IBLOCK_TYPE" => "Services",
 		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ID",
 		"SORT_BY2" => "",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => ""
-	)
+	),
+	false
 );?>
 	</div>
 </div>
