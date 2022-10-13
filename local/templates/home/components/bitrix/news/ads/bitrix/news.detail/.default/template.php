@@ -29,8 +29,10 @@ $this->setFrameMode(true);
         <div class="row">
             <div class="col-lg-8" style="margin-top: -150px;">
                 <div class="mb-5">
+            
+
                     <div class="slide-one-item home-slider owl-carousel">
-                        <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["ID"]) : ?>
+                        <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"] == 1) : ?>
                             <div>
                                 <img
                                     src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["SRC"]; ?>"
@@ -38,8 +40,8 @@ $this->setFrameMode(true);
                                     class="img-fluid"
                                 >
                             </div>
-                        <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][0]) : ?>
-                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]); $i++) : ?>
+                        <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"] > 1) : ?>
+                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"]); $i++) : ?>
                                 <div>
                                     <img
                                         src="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["SRC"]; ?>"
@@ -109,7 +111,7 @@ $this->setFrameMode(true);
                             <h2 class="h4 text-black mb-3"><?= GetMessage("PROPERTY_GALLERY"); ?></h2>
                         </div> 
                       
-                            <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["ID"]) : ?>
+                            <? if ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]['VALUE'] == 1) : ?>
                                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                                     <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]["SRC"]; ?>" class="image-popup gal-item">
                                         <img
@@ -119,8 +121,8 @@ $this->setFrameMode(true);
                                         >
                                     </a>
                                 </div>
-                            <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][0]) : ?>
-                                <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"]); $i++) : ?>
+                            <? elseif ($arResult["DISPLAY_PROPERTIES"]["IMAGES"]['VALUE'] > 1) : ?>
+                                <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["IMAGES"]["VALUE"]); $i++) : ?>
                                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                                         <a href="<?= $arResult["DISPLAY_PROPERTIES"]["IMAGES"]["FILE_VALUE"][$i]["SRC"]; ?>" class="image-popup gal-item">
                                             <img
@@ -137,12 +139,12 @@ $this->setFrameMode(true);
                     <? endif; ?>
                     <div class="mt-5">
                         <h2 class="h4 text-black mb-3"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></h2>
-                        <? if ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["ID"]) : ?>
+                        <? if ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]['VALUE'] == 1) : ?>
                             <div>
                                 <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
                             </div>
-                        <? elseif ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"][0]) : ?>
-                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"]); $i++) : ?>
+                        <? elseif ($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["VALUE"] > 1) : ?>
+                            <? for ($i = 0; $i < count($arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["VALUE"]); $i++) : ?>
                                 <div>
                                     <a href="<?= $arResult["DISPLAY_PROPERTIES"]["ADDITIONAL_MATERIALS"]["FILE_VALUE"][$i]["SRC"]; ?>"><?= GetMessage("ADDITIONAL_MATERIALS"); ?></a>
                                 </div>
