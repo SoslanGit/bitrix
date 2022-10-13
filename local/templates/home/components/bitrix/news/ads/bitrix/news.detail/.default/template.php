@@ -148,7 +148,7 @@ $this->setFrameMode(true);
                                 </div>
                             <? endfor; ?>
                             <? else : ?>
-                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_LINKS"); ?></div>
+                                <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_ADDITIONAL_MATERIALS"); ?></div>
                         <? endif; ?>
 
                     </div>

@@ -21,5 +21,6 @@ $MESS["NO_IMAGES"] = "Изображений нет";
 $MESS["NO_LINKS"] = "Ссылок нет";
 $MESS["YES"] = "Да";
 $MESS["NO"] = "Нет";
+$MESS["NO_ADDITIONAL_MATERIALS"] = "Нет дополнительных материалов";
 $MESS["ADDITIONAL_MATERIALS"] = "Дополнительные материалы";
 $MESS["LINKS"] = "Ссылки на внешние ресурсы";
