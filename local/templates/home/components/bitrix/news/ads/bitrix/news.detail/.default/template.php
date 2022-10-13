@@ -133,6 +133,8 @@ $this->setFrameMode(true);
                                         </a>
                                     </div>
                                 <? endfor; ?>
+                                <? else : ?>
+                                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4"><?= GetMessage("NO_IMAGES"); ?></div>
                                 <? endif; ?>
                            
                     </div>
