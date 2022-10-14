@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/company/vakansii/index.php',
     'SORT' => 100,
   ),
-  16 => 
+  25 => 
   array (
     'CONDITION' => '#^/company/news/#',
     'RULE' => '',
