@@ -14,14 +14,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 
 ?>
-<div class="row justify-content-center mb-5">
-    <div class="col-md-7 text-center">
-        <div class="site-section-title">
-            <h2><?= GetMessage("OUR_BLOG"); ?></h2>
-        </div>
-    </div>
-</div>
-<div class="row">
+<div class="site-section site-section-sm bg-light">
+    <div class="container">
+    
+<div class="row md-5">
 	<? foreach($arResult["ITEMS"] as $arItem): ?>
 		<?
 		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -46,9 +42,15 @@ $this->setFrameMode(true);
         </div>
 	<? endforeach; ?>
 </div>
-   
-        <? if ($arParams["DISPLAY_BOTTOM_PAGER"]) : ?>
+<div class="row">
+          <div class="col-md-12 text-center">
+          <? if ($arParams["DISPLAY_BOTTOM_PAGER"]) : ?>
             <br /><?= $arResult["NAV_STRING"]; ?>
         <? endif; ?>
+          </div>  
+        </div>
     </div>
 </div>
+
+       
+  

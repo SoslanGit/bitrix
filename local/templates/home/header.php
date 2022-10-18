@@ -97,20 +97,16 @@
                       <div>
                           <? global $USER;
                           if (!$USER->IsAuthorized()) : ?>
-                              <a href="/login/">Авторизация</a>
+                              <a href="/auth/">Авторизация</a>
                           <? else : ?>
-                              <? $APPLICATION->IncludeComponent(
-    "bitrix:system.auth.form", 
-    "auth", 
-    array(
-      "REGISTER_URL" => "/registration.php",
-      "FORGOT_PASSWORD_URL" => "",
-      "PROFILE_URL" => "",
-      "SHOW_ERRORS" => "N",
-      "COMPONENT_TEMPLATE" => "auth"
-    ),
-    false
-  ); ?>
+                            <form action="<?= $arResult["AUTH_URL"] ?>" class="d-inline">
+		<? foreach ($arResult["GET"] as $key => $value) { ?>
+			<input type="hidden" name="<?= $key ?>" value="<?= $value ?>" />
+		<? } ?>
+		<?= bitrix_sessid_post() ?>
+		<input type="hidden" name="logout" value="yes" />
+		<input type="submit" name="logout_butt" value="выйти" class="btn btn-primary  py-2 px-4 rounded-0" />
+	</form>
                           <? endif; ?>
                           <? $APPLICATION->IncludeComponent(
                               "bitrix:main.include",

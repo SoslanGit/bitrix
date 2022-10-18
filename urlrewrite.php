@@ -8,15 +8,23 @@ $arUrlRewrite=array (
     'PATH' => '/lichnyy-kabinet-prodavtsa/moi-obyavleniya/index.php',
     'SORT' => 100,
   ),
-  13 => 
+  27 => 
   array (
-    'CONDITION' => '#^/company/vakansii/#',
+    'CONDITION' => '#^/examen/services/#',
     'RULE' => '',
-    'ID' => 'bitrix:news',
-    'PATH' => '/company/vakansii/index.php',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/examen/services/index.php',
     'SORT' => 100,
   ),
-  25 => 
+  28 => 
+  array (
+    'CONDITION' => '#^/examen/products/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/examen/products/index.php',
+    'SORT' => 100,
+  ),
+  30 => 
   array (
     'CONDITION' => '#^/company/news/#',
     'RULE' => '',
@@ -30,6 +38,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/obyavleniya/index.php',
+    'SORT' => 100,
+  ),
+  29 => 
+  array (
+    'CONDITION' => '#^/examen/news/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/examen/news/index.php',
     'SORT' => 100,
   ),
   0 => 
@@ -46,6 +62,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog',
     'PATH' => '/products/index.php',
+    'SORT' => 100,
+  ),
+  26 => 
+  array (
+    'CONDITION' => '#^#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/company/vakansii/index.php',
     'SORT' => 100,
   ),
 );

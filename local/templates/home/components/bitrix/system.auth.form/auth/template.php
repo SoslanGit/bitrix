@@ -1,6 +1,5 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <? CJSCore::Init(); ?>
-<? if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR']) ShowMessage($arResult['ERROR_MESSAGE']); ?>
 <? if ($arResult["FORM_TYPE"] == "login") : ?>
 	<form class="p-5 bg-white border" name="system_auth_form<?= $arResult["RND"] ?>" method="post" target="_top" action="<?= $arResult["AUTH_URL"] ?>">
 		<? if ($arResult["BACKURL"] <> '') { ?><input type="hidden" name="backurl" value="<?= $arResult["BACKURL"] ?>"/><? } ?>
@@ -26,6 +25,10 @@
         </div>
 		<div class="row form-group">
             <div class="col-md-12">
+			<? if ($arResult['SHOW_ERRORS'] == 'Y' && $arResult['ERROR']): ?>
+				<?ShowMessage($arResult['ERROR_MESSAGE'])?>
+			<? endif ?>
+
 				<label class="font-weight-bold" for="password"><?= GetMessage("AUTH_PASSWORD") ?></label>
 				<input type="password" id="password" class="form-control" placeholder="<?= GetMessage("AUTH_PASSWORD") ?>" name="USER_PASSWORD" maxlength="255" size="17" autocomplete="off" />
 				<? if ($arResult["SECURE_AUTH"]) : ?>
@@ -80,13 +83,6 @@
 			</td>
 		</tr>
 	</form>
-<? else : ?>
-	<form action="<?= $arResult["AUTH_URL"] ?>" class="d-inline">
-		<? foreach ($arResult["GET"] as $key => $value) { ?>
-			<input type="hidden" name="<?= $key ?>" value="<?= $value ?>" />
-		<? } ?>
-		<?= bitrix_sessid_post() ?>
-		<input type="hidden" name="logout" value="yes" />
-		<input type="submit" name="logout_butt" value="<?= GetMessage("AUTH_LOGOUT_BUTTON") ?>" class="btn btn-primary  py-2 px-4 rounded-0" />
-	</form>
+
+	
 <? endif; ?>

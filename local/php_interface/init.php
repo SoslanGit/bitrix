@@ -6,14 +6,14 @@ $eventManager = \Bitrix\Main\EventManager::getInstance();
    { 
      if($arFields["ID"] > 0) 
      { 
-       if(strlen($arFields["UF_POKUP"]) > 0)  //Если поле покупателя заполнено 
+       if(($arFields["UF_PRODA"]) == 1)  //Если поле покупателя заполнено 
        { 
          $arGroups = CUser::GetUserGroup($arFields["ID"]); 
-         $arGroups[] = 6; //То добаляем пользователя в группу c ID15 
+         $arGroups[] = 6; //То добаляем пользователя в группу c ПОКУПАТЕЛЬ
          CUser::SetUserGroup($arFields["ID"], $arGroups); 
        } 
        else 
-       { 
+       {
          $arGroups = CUser::GetUserGroup($arFields["ID"]); 
          $arGroups[] = 7;  //Если поле продавец заполнено 
          CUser::SetUserGroup($arFields["ID"], $arGroups); 
