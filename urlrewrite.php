@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/examen/services/index.php',
     'SORT' => 100,
   ),
-  28 => 
+  32 => 
   array (
     'CONDITION' => '#^/examen/products/#',
     'RULE' => '',
@@ -40,12 +40,20 @@ $arUrlRewrite=array (
     'PATH' => '/obyavleniya/index.php',
     'SORT' => 100,
   ),
-  29 => 
+  31 => 
   array (
     'CONDITION' => '#^/examen/news/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/examen/news/index.php',
+    'SORT' => 100,
+  ),
+  33 => 
+  array (
+    'CONDITION' => '#^/examen/rew/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/examen/rew/index.php',
     'SORT' => 100,
   ),
   0 => 
