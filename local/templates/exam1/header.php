@@ -5,7 +5,7 @@ use Bitrix\Main\Page\Asset;
 
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="<?= LANGUAGE_ID; ?>">
 
 <head>
     <title><?$APPLICATION->ShowTitle()?></title>
@@ -124,7 +124,8 @@ use Bitrix\Main\Page\Asset;
                     <div class="cnt">
                         <? if ($APPLICATION->GetCurPage(false) != '/examen/'): ?>
                         <header>
-                            <h1><?=$APPLICATION->ShowTitle('h1')?></h1>
+						<h1><? $APPLICATION->ShowTitle(false); ?></h1>
+
                         </header>
                         <? else: ?>
                             <p>«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.

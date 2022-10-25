@@ -30,7 +30,7 @@ $this->setFrameMode(true);
             <div class="review-block-title">
                 <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
                     <span class="review-block-name">
-                    <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+                    <a href="<?= $arItem["PREVIEW_PAGE_URL"] ?>">
                         <? echo $arItem["NAME"] ?>
                     </a>
                 </span>
@@ -63,10 +63,10 @@ $this->setFrameMode(true);
         <? if ($arParams["DISPLAY_PICTURE"] != "N"): ?>
             <div class="review-img-wrap">
                 <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
-                    <? if (is_array($arItem["DETAIL_PICTURE"])): ?>
+                    <? if (is_array($arItem["PREVIEW_PICTURE"])): ?>
                         <?php
                         $arImage = CFile::ResizeImageGet(
-                            $arItem["DETAIL_PICTURE"]["ID"],
+                            $arItem["PREVIEW_PICTURE"]["ID"],
                             ["width" => 66, "height" => 66],
                             BX_RESIZE_IMAGE_EXACT,
                             true

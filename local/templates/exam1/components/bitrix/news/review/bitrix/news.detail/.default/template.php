@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <div class="review-block">
     <div class="review-text">
         <? if ($arResult["DETAIL_TEXT"]): ?>

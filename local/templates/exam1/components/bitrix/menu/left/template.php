@@ -8,16 +8,22 @@
 		<ul>
 
 
-		<?
-		foreach($arResult as $arItem):
-			if($arItem["DEPTH_LEVEL"] > 1) 
-				continue;
-		?>
-			<?if($arItem["SELECTED"]):?>
-				<li class="selected"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
-			<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+	
+		<?foreach($arResult as $arItem):?>
+			<? if ($arItem['PERMISSION'] > 'D'): ?>
+				<?if($arItem["SELECTED"]):?>
+					<li class="selected"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<?else:?>
+					<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></li>
+				<?endif?>
+				<? else: ?>
+					<?if($arItem["DEPTH_LEVEL"] == 1) 
+					continue;?>
 			<?endif?>
+			
+			
+		
+			
 			
 		<?endforeach?>
 	</ul>

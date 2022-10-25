@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Компания", 
-		"company/", 
+		"./", 
 		Array(), 
 		Array("MENU_TEXT"=>"текст для пункта Компания.", "MENU_COLOR"=>"color-red"), 
 		"" 
@@ -51,7 +51,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Опросы", 
-		"ask/aktualnyy-opros.php", 
+		"ask/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -40,7 +40,7 @@ $arUrlRewrite=array (
     'PATH' => '/obyavleniya/index.php',
     'SORT' => 100,
   ),
-  31 => 
+  38 => 
   array (
     'CONDITION' => '#^/examen/news/#',
     'RULE' => '',
@@ -48,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/examen/news/index.php',
     'SORT' => 100,
   ),
-  33 => 
+  37 => 
   array (
     'CONDITION' => '#^/examen/rew/#',
     'RULE' => '',

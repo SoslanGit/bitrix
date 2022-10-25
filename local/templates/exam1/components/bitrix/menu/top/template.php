@@ -1,9 +1,9 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?if (!empty($arResult)):?>
 	
-<ul>
+<ul class="menu-list">
 <li class="main-page">
-        <a href="/examen/"><?=GetMessage('HOME_PAGE')?></a>
+        <a href="<?=SITE_DIR?>"><?=GetMessage('HOME_PAGE')?></a>
 </li>
 <?
 $previousLevel = 0;

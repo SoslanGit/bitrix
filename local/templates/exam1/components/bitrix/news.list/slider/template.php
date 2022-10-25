@@ -75,11 +75,11 @@ $this->setFrameMode(true);
                             </div>
                         </div>
 
-                        <? //<Показывать первые 150 символов текста отзыва из анонса> ?>
+                        <? //<Показывать текста отзыва из анонса> ?>
                         <? if ($arParams["DISPLAY_PREVIEW_TEXT"] != "N" && $arItem["PREVIEW_TEXT"]): ?>
                             <div class="text-block">
-                                <?= substr($arItem["PREVIEW_TEXT"], 0, 150); ?>
-                                <? if (strlen($arItem["PREVIEW_TEXT"]) > 150): ?>
+                                <?=$arItem["PREVIEW_TEXT"]; ?>
+                                <? if (strlen($arItem["PREVIEW_TEXT"])): ?>
                                     ...
                                 <? endif; ?>
                             </div>

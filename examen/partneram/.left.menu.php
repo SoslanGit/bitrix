@@ -2,21 +2,21 @@
 $aMenuLinks = Array(
 	Array(
 		"Условия сотрудничества", 
-		"".SITE_DIR."partneram/", 
+		"./", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		" Как стать партнером", 
-		"".SITE_DIR."partneram/kak-stat-partnerom.php", 
+		"kak-stat-partnerom.php", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Расписание мероприятий", 
-		"".SITE_DIR."partneram/raspisanie-meropriyatiy/", 
+		"raspisanie-meropriyatiy/", 
 		Array(), 
 		Array(), 
 		"" 
